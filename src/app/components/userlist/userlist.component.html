@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <h2>All Users Details</h2>
+    <div class="card">
+        <div class="card-header">User List</div>
+        <div class="card-body">
+            <table class="table tabler-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>userId</th>
+                        <th>FullName</th>
+                        <th>emailId</th>
+                        <th>Mobile</th>
+                        <th>Password</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList;let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{user.fullname}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.mobilenumber}}</td>
+                        <td>{{user.password}}</td>
+                        <td>
+                            <button class="btn btn-primary" [routerLink]="['/updateUser',user.userId]">Edit</button>
+                            <button class="btn btn-warning ml-2">Delete</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
