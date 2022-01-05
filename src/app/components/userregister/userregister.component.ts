@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserserviceService } from 'src/app/services/userservice.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UserregisterComponent implements OnInit {
   submitted = false;
   user:any=[];
   mydata:any=[];
-  constructor(private fb:FormBuilder,private userService:UserserviceService) { }
+  constructor(private fb:FormBuilder,private userService:UserserviceService,private router:Router) { }
 
   ngOnInit(): void {
     this.createRegisterationForm();
@@ -33,7 +34,9 @@ export class UserregisterComponent implements OnInit {
     this.submitted=true;
      console.log("success"+ JSON.stringify(this.registerForm.value));
     this.userService.addUser(this.registerForm.value);
+     this.router.navigate(['listUser']);
     // this.addUser(this.registerForm.value);
+    // 
    }
   onReset() {
     this.submitted = false;
