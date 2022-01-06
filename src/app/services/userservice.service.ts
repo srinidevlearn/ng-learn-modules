@@ -41,7 +41,7 @@ export class UserserviceService {
       localStorage.setItem('Users',JSON.stringify(users));
     }
 
-    editUser(id:number){
+    editUser(id:number){}
       
        /**
        * 1. Get the element specified position in array
@@ -51,7 +51,7 @@ export class UserserviceService {
        * 5. add roles in register page
        * 
        * */ 
-    }
+    
      
     deleteUser(userid:number) {
       let storage: any = localStorage.getItem('Users');

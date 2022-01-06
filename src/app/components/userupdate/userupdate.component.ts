@@ -64,6 +64,8 @@ export class UserupdateComponent implements OnInit {
     users[userIndex] = userform;
 
     localStorage.setItem('Users', JSON.stringify(users));
+    this.router.navigate(['listUser']);
+
 
   }
      
@@ -75,8 +77,7 @@ export class UserupdateComponent implements OnInit {
      console.log(userform);
      users.push(userform);
      localStorage.setItem('Users', JSON.stringify(users));
+     this.router.navigate(['listUser']);
      }
-  
-        
-      
+     
     }
